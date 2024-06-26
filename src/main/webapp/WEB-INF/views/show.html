@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>Danh sách sản phẩm</title>
+</head>
+
+
+
+<body class="bg-body-tertiary">
+<nav th:replace="/layout :: menu "></nav>
+<nav th:replace="/layout :: notify "></nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3>Trang show sản phẩm</h3>
+            <h5 class="card-title" th:text="${product.name}"></h5>
+            <p class="card-text" th:text="${product.description}"></p>
+            <p class="card-text" th:text="${product.price}"></p>
+            <a th:href="@{/add/__${product.id}__(action='list')}" class="btn btn-primary">Add To Cart</a>
+        </div>
+    </div>
+
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
